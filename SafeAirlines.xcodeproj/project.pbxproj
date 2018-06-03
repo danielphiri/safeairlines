@@ -7,13 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A01058EBD849F97BA51C827 /* Pods_SafeAirlinesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CA163FC306E34358B470C9A /* Pods_SafeAirlinesTests.framework */; };
 		94ABFEB120C03CEC00B5FB7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94ABFEB020C03CEC00B5FB7B /* AppDelegate.swift */; };
-		94ABFEB320C03CEC00B5FB7B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94ABFEB220C03CEC00B5FB7B /* ViewController.swift */; };
 		94ABFEB620C03CEC00B5FB7B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94ABFEB420C03CEC00B5FB7B /* Main.storyboard */; };
 		94ABFEB820C03CEF00B5FB7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94ABFEB720C03CEF00B5FB7B /* Assets.xcassets */; };
 		94ABFEBB20C03CEF00B5FB7B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94ABFEB920C03CEF00B5FB7B /* LaunchScreen.storyboard */; };
 		94ABFEC620C03CEF00B5FB7B /* SafeAirlinesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94ABFEC520C03CEF00B5FB7B /* SafeAirlinesTests.swift */; };
 		94ABFED120C03CEF00B5FB7B /* SafeAirlinesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94ABFED020C03CEF00B5FB7B /* SafeAirlinesUITests.swift */; };
+		94ABFEE020C08F6700B5FB7B /* HomePageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94ABFEDF20C08F6700B5FB7B /* HomePageController.swift */; };
+		94ABFEE520C090FD00B5FB7B /* AirportSearchPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94ABFEE420C090FD00B5FB7B /* AirportSearchPage.swift */; };
+		94ABFEE820C0939300B5FB7B /* WebCallsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94ABFEE720C0939300B5FB7B /* WebCallsHandler.swift */; };
+		94ABFEEB20C0B81000B5FB7B /* SearchResultsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94ABFEEA20C0B81000B5FB7B /* SearchResultsCell.xib */; };
+		94ABFEED20C0B8B900B5FB7B /* SearchResultsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94ABFEEC20C0B8B900B5FB7B /* SearchResultsCell.swift */; };
+		94ABFEEF20C1F1EB00B5FB7B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94ABFEEE20C1F1EB00B5FB7B /* Constants.swift */; };
+		D64B0AB7D9FABE838F82AAB8 /* Pods_SafeAirlines.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 752562DFAB0DBB7AD4636E65 /* Pods_SafeAirlines.framework */; };
+		E1CB3AC716C8705FB2B86A0F /* Pods_SafeAirlinesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADA57C34E537DB7CB897DC5B /* Pods_SafeAirlinesUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +42,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		24DAB651E7974D9C080198D7 /* Pods-SafeAirlinesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafeAirlinesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SafeAirlinesTests/Pods-SafeAirlinesTests.release.xcconfig"; sourceTree = "<group>"; };
+		5CA163FC306E34358B470C9A /* Pods_SafeAirlinesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SafeAirlinesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		752562DFAB0DBB7AD4636E65 /* Pods_SafeAirlines.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SafeAirlines.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		94ABFEAD20C03CEC00B5FB7B /* SafeAirlines.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SafeAirlines.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94ABFEB020C03CEC00B5FB7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		94ABFEB220C03CEC00B5FB7B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		94ABFEB520C03CEC00B5FB7B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		94ABFEB720C03CEF00B5FB7B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		94ABFEBA20C03CEF00B5FB7B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +57,18 @@
 		94ABFECC20C03CEF00B5FB7B /* SafeAirlinesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SafeAirlinesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		94ABFED020C03CEF00B5FB7B /* SafeAirlinesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeAirlinesUITests.swift; sourceTree = "<group>"; };
 		94ABFED220C03CEF00B5FB7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		94ABFEDF20C08F6700B5FB7B /* HomePageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageController.swift; sourceTree = "<group>"; };
+		94ABFEE420C090FD00B5FB7B /* AirportSearchPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportSearchPage.swift; sourceTree = "<group>"; };
+		94ABFEE720C0939300B5FB7B /* WebCallsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebCallsHandler.swift; sourceTree = "<group>"; };
+		94ABFEEA20C0B81000B5FB7B /* SearchResultsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultsCell.xib; sourceTree = "<group>"; };
+		94ABFEEC20C0B8B900B5FB7B /* SearchResultsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsCell.swift; sourceTree = "<group>"; };
+		94ABFEEE20C1F1EB00B5FB7B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		ADA57C34E537DB7CB897DC5B /* Pods_SafeAirlinesUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SafeAirlinesUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2F19B4B2DF1A77EB0C69F1E /* Pods-SafeAirlinesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafeAirlinesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SafeAirlinesTests/Pods-SafeAirlinesTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D03F950C628863FDD6091901 /* Pods-SafeAirlinesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafeAirlinesUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SafeAirlinesUITests/Pods-SafeAirlinesUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		D6D25577C7CBB2773942B417 /* Pods-SafeAirlines.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafeAirlines.release.xcconfig"; path = "Pods/Target Support Files/Pods-SafeAirlines/Pods-SafeAirlines.release.xcconfig"; sourceTree = "<group>"; };
+		F341617FAECC4C0DD1547AEB /* Pods-SafeAirlines.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafeAirlines.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SafeAirlines/Pods-SafeAirlines.debug.xcconfig"; sourceTree = "<group>"; };
+		F651B0097DB66C987BFE864F /* Pods-SafeAirlinesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafeAirlinesUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SafeAirlinesUITests/Pods-SafeAirlinesUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D64B0AB7D9FABE838F82AAB8 /* Pods_SafeAirlines.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A01058EBD849F97BA51C827 /* Pods_SafeAirlinesTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +92,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1CB3AC716C8705FB2B86A0F /* Pods_SafeAirlinesUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7A409C885734BD50266A9C5C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				752562DFAB0DBB7AD4636E65 /* Pods_SafeAirlines.framework */,
+				5CA163FC306E34358B470C9A /* Pods_SafeAirlinesTests.framework */,
+				ADA57C34E537DB7CB897DC5B /* Pods_SafeAirlinesUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		81BD099C62ABFE0D27E68252 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F341617FAECC4C0DD1547AEB /* Pods-SafeAirlines.debug.xcconfig */,
+				D6D25577C7CBB2773942B417 /* Pods-SafeAirlines.release.xcconfig */,
+				B2F19B4B2DF1A77EB0C69F1E /* Pods-SafeAirlinesTests.debug.xcconfig */,
+				24DAB651E7974D9C080198D7 /* Pods-SafeAirlinesTests.release.xcconfig */,
+				D03F950C628863FDD6091901 /* Pods-SafeAirlinesUITests.debug.xcconfig */,
+				F651B0097DB66C987BFE864F /* Pods-SafeAirlinesUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		94ABFEA420C03CEC00B5FB7B = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +129,8 @@
 				94ABFEC420C03CEF00B5FB7B /* SafeAirlinesTests */,
 				94ABFECF20C03CEF00B5FB7B /* SafeAirlinesUITests */,
 				94ABFEAE20C03CEC00B5FB7B /* Products */,
+				81BD099C62ABFE0D27E68252 /* Pods */,
+				7A409C885734BD50266A9C5C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,8 +147,10 @@
 		94ABFEAF20C03CEC00B5FB7B /* SafeAirlines */ = {
 			isa = PBXGroup;
 			children = (
+				94ABFEE620C092E700B5FB7B /* Data Model */,
+				94ABFEE120C090A500B5FB7B /* Search Pages */,
+				94ABFEDE20C08F3E00B5FB7B /* Home Page */,
 				94ABFEB020C03CEC00B5FB7B /* AppDelegate.swift */,
-				94ABFEB220C03CEC00B5FB7B /* ViewController.swift */,
 				94ABFEB420C03CEC00B5FB7B /* Main.storyboard */,
 				94ABFEB720C03CEF00B5FB7B /* Assets.xcassets */,
 				94ABFEB920C03CEF00B5FB7B /* LaunchScreen.storyboard */,
@@ -125,6 +177,33 @@
 			path = SafeAirlinesUITests;
 			sourceTree = "<group>";
 		};
+		94ABFEDE20C08F3E00B5FB7B /* Home Page */ = {
+			isa = PBXGroup;
+			children = (
+				94ABFEDF20C08F6700B5FB7B /* HomePageController.swift */,
+			);
+			path = "Home Page";
+			sourceTree = "<group>";
+		};
+		94ABFEE120C090A500B5FB7B /* Search Pages */ = {
+			isa = PBXGroup;
+			children = (
+				94ABFEE420C090FD00B5FB7B /* AirportSearchPage.swift */,
+				94ABFEEA20C0B81000B5FB7B /* SearchResultsCell.xib */,
+				94ABFEEC20C0B8B900B5FB7B /* SearchResultsCell.swift */,
+			);
+			path = "Search Pages";
+			sourceTree = "<group>";
+		};
+		94ABFEE620C092E700B5FB7B /* Data Model */ = {
+			isa = PBXGroup;
+			children = (
+				94ABFEE720C0939300B5FB7B /* WebCallsHandler.swift */,
+				94ABFEEE20C1F1EB00B5FB7B /* Constants.swift */,
+			);
+			path = "Data Model";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +211,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 94ABFED520C03CEF00B5FB7B /* Build configuration list for PBXNativeTarget "SafeAirlines" */;
 			buildPhases = (
+				61A7DBB3E5B3BAC7444F1A55 /* [CP] Check Pods Manifest.lock */,
 				94ABFEA920C03CEC00B5FB7B /* Sources */,
 				94ABFEAA20C03CEC00B5FB7B /* Frameworks */,
 				94ABFEAB20C03CEC00B5FB7B /* Resources */,
+				2D2D47999E932857C91D501A /* [CP] Embed Pods Frameworks */,
+				43D10965FEB317B4B73D9C33 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -149,9 +231,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 94ABFED820C03CEF00B5FB7B /* Build configuration list for PBXNativeTarget "SafeAirlinesTests" */;
 			buildPhases = (
+				0BD0296B69DC55BA0B8E6491 /* [CP] Check Pods Manifest.lock */,
 				94ABFEBD20C03CEF00B5FB7B /* Sources */,
 				94ABFEBE20C03CEF00B5FB7B /* Frameworks */,
 				94ABFEBF20C03CEF00B5FB7B /* Resources */,
+				A8707F06ECB84878D1997875 /* [CP] Embed Pods Frameworks */,
+				8E2BA5CD164EF6F814F580B0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -167,9 +252,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 94ABFEDB20C03CEF00B5FB7B /* Build configuration list for PBXNativeTarget "SafeAirlinesUITests" */;
 			buildPhases = (
+				0E4CD10FB5B3A35496E9A5A6 /* [CP] Check Pods Manifest.lock */,
 				94ABFEC820C03CEF00B5FB7B /* Sources */,
 				94ABFEC920C03CEF00B5FB7B /* Frameworks */,
 				94ABFECA20C03CEF00B5FB7B /* Resources */,
+				CDC04F9C50719E18BF2C4E4B /* [CP] Embed Pods Frameworks */,
+				16F3036395E1CEDB57B9A808 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -231,6 +319,7 @@
 			files = (
 				94ABFEBB20C03CEF00B5FB7B /* LaunchScreen.storyboard in Resources */,
 				94ABFEB820C03CEF00B5FB7B /* Assets.xcassets in Resources */,
+				94ABFEEB20C0B81000B5FB7B /* SearchResultsCell.xib in Resources */,
 				94ABFEB620C03CEC00B5FB7B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -251,13 +340,167 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0BD0296B69DC55BA0B8E6491 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SafeAirlinesTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0E4CD10FB5B3A35496E9A5A6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SafeAirlinesUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		16F3036395E1CEDB57B9A808 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SafeAirlinesUITests/Pods-SafeAirlinesUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2D2D47999E932857C91D501A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SafeAirlines/Pods-SafeAirlines-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SafeAirlines/Pods-SafeAirlines-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		43D10965FEB317B4B73D9C33 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SafeAirlines/Pods-SafeAirlines-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		61A7DBB3E5B3BAC7444F1A55 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SafeAirlines-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8E2BA5CD164EF6F814F580B0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SafeAirlinesTests/Pods-SafeAirlinesTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A8707F06ECB84878D1997875 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SafeAirlinesTests/Pods-SafeAirlinesTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CDC04F9C50719E18BF2C4E4B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SafeAirlinesUITests/Pods-SafeAirlinesUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		94ABFEA920C03CEC00B5FB7B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94ABFEB320C03CEC00B5FB7B /* ViewController.swift in Sources */,
 				94ABFEB120C03CEC00B5FB7B /* AppDelegate.swift in Sources */,
+				94ABFEED20C0B8B900B5FB7B /* SearchResultsCell.swift in Sources */,
+				94ABFEE520C090FD00B5FB7B /* AirportSearchPage.swift in Sources */,
+				94ABFEE020C08F6700B5FB7B /* HomePageController.swift in Sources */,
+				94ABFEE820C0939300B5FB7B /* WebCallsHandler.swift in Sources */,
+				94ABFEEF20C1F1EB00B5FB7B /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,11 +671,13 @@
 		};
 		94ABFED620C03CEF00B5FB7B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F341617FAECC4C0DD1547AEB /* Pods-SafeAirlines.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9AMQKU48U7;
 				INFOPLIST_FILE = SafeAirlines/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -446,11 +691,13 @@
 		};
 		94ABFED720C03CEF00B5FB7B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D6D25577C7CBB2773942B417 /* Pods-SafeAirlines.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9AMQKU48U7;
 				INFOPLIST_FILE = SafeAirlines/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -464,6 +711,7 @@
 		};
 		94ABFED920C03CEF00B5FB7B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B2F19B4B2DF1A77EB0C69F1E /* Pods-SafeAirlinesTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -485,6 +733,7 @@
 		};
 		94ABFEDA20C03CEF00B5FB7B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24DAB651E7974D9C080198D7 /* Pods-SafeAirlinesTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -506,6 +755,7 @@
 		};
 		94ABFEDC20C03CEF00B5FB7B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D03F950C628863FDD6091901 /* Pods-SafeAirlinesUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -526,6 +776,7 @@
 		};
 		94ABFEDD20C03CEF00B5FB7B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F651B0097DB66C987BFE864F /* Pods-SafeAirlinesUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
