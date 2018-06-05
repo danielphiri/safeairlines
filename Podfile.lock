@@ -1,12 +1,18 @@
 PODS:
   - Alamofire (4.7.2)
+  - SkeletonView (1.2)
+  - SwiftyJSON (4.1.0)
 
 DEPENDENCIES:
   - Alamofire
+  - SkeletonView
+  - SwiftyJSON (~> 4.0)
 
 SPEC CHECKSUMS:
   Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
+  SkeletonView: d68962d45d1af038f6a110d2274b183df8f82752
+  SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
 
-PODFILE CHECKSUM: 7cad19657271334f643b3910764f18336d0aabda
+PODFILE CHECKSUM: 12f189b8d255fe463345fe7de3dbba8225e3f1ef
 
 COCOAPODS: 1.4.0

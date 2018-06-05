@@ -8,20 +8,25 @@
 
 import UIKit
 import MapKit
+import SwiftyJSON
+import SkeletonView
 
-class AirportSearchPage: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
+class AirportSearchPage: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextViewDelegate, SkeletonTableViewDataSource {
+    
+    let letters = NSCharacterSet.letters
     var locationManager = CLLocationManager()
     var tempFields = ["Oakland", "SFO", "Northen Land", "CA", "MLS", "MLK", "LAX", "LAS", "Athens", "Santorini"]
+    var allAirports = [Airport]()
     var firstPartOfApi = "https://api.lufthansa.com/v1/references/airports/"
     var lastPartOfApi = "?limit=20&offset=0&LHoperated=0"
     var homeControllerInstance = HomePageController()
     var prototypeCell = "searchResultsCell"
     var cellNibName = "SearchResultsCell"
-    
+    var navigationBarHeight: CGFloat = 87
     // The field where the user types in the search
     lazy var searchField : UITextView = {
-        let search = UITextView(frame: CGRect.init(x: 0, y: 87, width: view.frame.width, height: 35))
+         //87
+        let search = UITextView(frame: CGRect.init(x: 0, y: navigationBarHeight, width: view.frame.width, height: 35))
         search.textColor = UIColor.init(red: 92/255, green: 94/255, blue: 102/255, alpha: 1)
         search.layer.cornerRadius = 10
         search.layer.borderColor = themeColor.withAlphaComponent(0.5).cgColor
@@ -33,26 +38,33 @@ class AirportSearchPage: UIViewController, UITableViewDataSource, UITableViewDel
         search.layer.masksToBounds = true
         search.font = UIFont.boldSystemFont(ofSize: 17)//(name: "Verdana", size: 16)
         search.textAlignment = .center
+        search.delegate = self
+        search.autocapitalizationType = .allCharacters
+        search.returnKeyType = .search
         return search
     }()
     
     // The table view to display result suggestions
     // as user types
     var resultsTableView : UITableView {
-       let tableView = UITableView(frame: CGRect(x: 8, y: 125, width: 359, height: 600))
+       // 125
+       let tableView = UITableView(frame: CGRect(x: 8, y: navigationBarHeight + 36, width: 359, height: 600))
         tableView.delegate = self
         tableView.dataSource = self
         tableView.allowsSelection = true
         tableView.register(UINib(nibName: cellNibName, bundle: .main), forCellReuseIdentifier: prototypeCell)
+        tableView.isSkeletonable = true
         return tableView
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationBarHeight = UIApplication.shared.statusBarFrame.size.height +
+            (self.navigationController?.navigationBar.frame.height ?? 0.0)
         if locationManager.location != nil {
-            fethAirportData(withCode: nil, latitude: locationManager.location?.coordinate.latitude.description, andLongitude: locationManager.location?.coordinate.longitude.description)
+            fetchAirportData(withCode: nil, latitude: locationManager.location?.coordinate.latitude.description, andLongitude: locationManager.location?.coordinate.longitude.description)
         } else {
-            fethAirportData(withCode: nil, latitude: nil, andLongitude: nil)
+            fetchAirportData(withCode: nil, latitude: nil, andLongitude: nil)
         }
         
         setUpViews()
@@ -68,9 +80,10 @@ class AirportSearchPage: UIViewController, UITableViewDataSource, UITableViewDel
         }
     }
     
-    func fethAirportData(withCode code: String?, latitude: String?, andLongitude longitude: String?) {
+    func fetchAirportData(withCode code: String?, latitude: String?, andLongitude longitude: String?) {
         if code == nil && longitude != nil && latitude != nil {
-            let url = "https://api.lufthansa.com/v1/references/airports/nearest/\(latitude!),\(longitude!)"
+            //let url = "https://api-test.lufthansa.com/v1/references/airports/nearest/5.312034213,-0.21341234123"
+            let url = "https://VXjkwwSGh4.lufthansa.com/v1/references/airports/nearest/\(latitude!),\(longitude!)/application/json"
             processRequest(withURL: url)
         } else {
             if code == nil {
@@ -84,29 +97,96 @@ class AirportSearchPage: UIViewController, UITableViewDataSource, UITableViewDel
     }
     
     func processRequest(withURL url: String) {
+        allAirports.removeAll()
         fetchData(fromURL: url, withCompletionHandler: {(results) -> Void in
             do {
-                let json = try JSONSerialization.jsonObject(with: results!, options: [])
+                
+                //let json = try JSONSerialization.data(withJSONObject: results!, options: [])//.jsonObject(with: results!, options: [])
+                let json = JSON(results)
+                if json["AirportResource"] != JSON.null {
+                    self.extractAirports(fromJSON: json["AirportResource"] )
+                }
+               
+                //let j = JS
             } catch {
-                print(error)
+                //ERROR
+                //print(error)
             }
-            
-            print(results)
-            print(results)
         })
     }
     
+    func textViewDidChange(_ textView: UITextView) {
+        if textView.text.count == 3 {
+            checkCode(code: textView.text)
+        }
+            //.text = textView.text.capitalized
+    }
     
+    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if searchField.text.count != 3 {
+            //ERROR
+        } else {
+            checkCode(code: searchField.text)
+        }
+    }
+    
+    //Checks if code is valid
+    func checkCode(code: String) {
+        let range = code.rangeOfCharacter(from: letters)
+        // range will be nil if no letters is found
+        if let test = range {
+            //println("letters found")
+            self.fetchAirportData(withCode: test.description, latitude: nil, andLongitude: nil)
+        }
+        else {
+            //ERROR
+            //println("letters not found")
+        }
+
+    }
+    
+    func extractAirports(fromJSON json: JSON) {
+        for data in json["Airports"]["Airport"] {
+            let currData = data.1
+            print(currData)
+            let longitude = currData["Position"]["Coordinate"]["Longitude"].description
+            let latitude = currData["Position"]["Coordinate"]["Latitude"].description
+            let airportCode = currData["AirportCode"].description
+            
+            let newAirport = Airport()
+            newAirport.setCode(code: airportCode)
+            newAirport.setLocation(longitude: longitude, latitude: latitude)
+            allAirports.append(newAirport)
+        }
+        self.reloadList()
+    }
+    
+    func reloadList() {
+        DispatchQueue.main.async {
+//            let path = IndexPath(row: 0, section: 0)
+//            self.resultsTableView.insertRows(at: [path], with: .top)
+            
+            self.resultsTableView.reloadData()
+            //self.viewDidLoad()
+            print("kay")
+        }
+    }
 }
 
 extension AirportSearchPage {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tempFields.count
+//        if allAirports.count == 0 {
+//            //SDStateTableView.setState(.withImage(image: "empty_cart",
+////                                                 title: "Nearest Aiports Loading",
+////                                                 message: "Your nearest airports will finish loading in a few seconds"))
+//        }
+        return allAirports.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: prototypeCell, for: indexPath) as! SearchResultsCell
-        cell.title.text = tempFields[indexPath.row]
+        cell.title.text = allAirports[indexPath.row].code
         return cell
     }
     
@@ -117,4 +197,10 @@ extension AirportSearchPage {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50
     }
+    
+    func collectionSkeletonView(_ skeletonView: UITableView, cellIdenfierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier {
+        return prototypeCell
+    }
 }
+
+
