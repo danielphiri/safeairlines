@@ -13,6 +13,8 @@ import SkeletonView
 
 class AirportSearchPage: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextViewDelegate, SkeletonTableViewDataSource {
     
+    var isFirstAirport = false
+    var isNearby = false
     let letters = NSCharacterSet.letters
     var locationManager = CLLocationManager()
     var tempFields = ["Oakland", "SFO", "Northen Land", "CA", "MLS", "MLK", "LAX", "LAS", "Athens", "Santorini"]
@@ -70,6 +72,11 @@ class AirportSearchPage: UIViewController, UITableViewDataSource, UITableViewDel
         setUpViews()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        searchField.isEditable = true
+        searchField.becomeFirstResponder()
+    }
+    
     func setUpViews() {
         view.backgroundColor = .white
         view.addSubview(searchField)
@@ -81,16 +88,19 @@ class AirportSearchPage: UIViewController, UITableViewDataSource, UITableViewDel
     }
     
     func fetchAirportData(withCode code: String?, latitude: String?, andLongitude longitude: String?) {
-        if code == nil && longitude != nil && latitude != nil {
+        if code == nil && longitude != nil && latitude != nil && allAirports.count == 0 {
             //let url = "https://api-test.lufthansa.com/v1/references/airports/nearest/5.312034213,-0.21341234123"
             let url = "https://VXjkwwSGh4.lufthansa.com/v1/references/airports/nearest/\(latitude!),\(longitude!)/application/json"
+            self.isNearby = true
             processRequest(withURL: url)
-        } else {
+        } else if (allAirports.count == 0)  {
             if code == nil {
                 let url = firstPartOfApi + lastPartOfApi
+                self.isNearby = false
                 processRequest(withURL: url)
             } else {
                 let url = firstPartOfApi + code! + lastPartOfApi
+                self.isNearby = false
                 processRequest(withURL: url)
             }
         }
@@ -117,6 +127,8 @@ class AirportSearchPage: UIViewController, UITableViewDataSource, UITableViewDel
     
     func textViewDidChange(_ textView: UITextView) {
         if textView.text.count == 3 {
+            textView.isEditable = false
+            textView.resignFirstResponder()
             checkCode(code: textView.text)
         }
             //.text = textView.text.capitalized
@@ -136,6 +148,7 @@ class AirportSearchPage: UIViewController, UITableViewDataSource, UITableViewDel
         // range will be nil if no letters is found
         if let test = range {
             //println("letters found")
+            allAirports.removeAll()
             self.fetchAirportData(withCode: test.description, latitude: nil, andLongitude: nil)
         }
         else {
@@ -167,7 +180,7 @@ class AirportSearchPage: UIViewController, UITableViewDataSource, UITableViewDel
 //            self.resultsTableView.insertRows(at: [path], with: .top)
             
             self.resultsTableView.reloadData()
-            //self.viewDidLoad()
+            self.viewDidLoad()
             print("kay")
         }
     }
@@ -198,8 +211,49 @@ extension AirportSearchPage {
         return 50
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let text = allAirports[indexPath.row].code
+        if isFirstAirport {
+            homeControllerInstance.originAirport.text = "FROM: \(text)"
+            homeControllerInstance.originAirport.textColor = .black
+            homeControllerInstance.originAirport.font = UIFont.boldSystemFont(ofSize: 16)
+            navigationController?.popViewController(animated: true)
+        } else {
+            homeControllerInstance.destinationAirport.text = "TO: \(text)"
+            homeControllerInstance.destinationAirport.textColor = .black
+            homeControllerInstance.destinationAirport.font = UIFont.boldSystemFont(ofSize: 16)
+            navigationController?.popViewController(animated: true)
+        }
+        
+    }
+    
     func collectionSkeletonView(_ skeletonView: UITableView, cellIdenfierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier {
         return prototypeCell
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 30))
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 28))
+        label.textAlignment = .center
+        label.backgroundColor = .groupTableViewBackground
+        view.backgroundColor = .white
+        label.font = UIFont.boldSystemFont(ofSize: 18)
+        label.textColor = .gray
+        if isNearby {
+            label.text = "NEARBY AIRPORTS:"
+        } else {
+            label.text = "AIRPORTS MATCHING YOUR SEARCH:"
+        }
+        view.addSubview(label)
+        return view
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if isNearby {
+            return "Nearby Airports:"
+        } else {
+            return "Matching Airports:"
+        }
     }
 }
 

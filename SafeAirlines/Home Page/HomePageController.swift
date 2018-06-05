@@ -13,7 +13,8 @@ import MapKit
 class HomePageController: UIViewController, UITextViewDelegate,  CLLocationManagerDelegate, MKMapViewDelegate {
     
     var locationManager: CLLocationManager!
-    
+    var originAirportPrompt = "Which airport are you coming from? 🤔"
+    var destinationPrompt = "Which airport are you going to? 🤔"
     @IBOutlet var backGroundView: UIView!
     
     @IBOutlet weak var airportsDisplay: MKMapView!
@@ -26,16 +27,46 @@ class HomePageController: UIViewController, UITextViewDelegate,  CLLocationManag
     
     @IBAction func actionButtonPressed(_ sender: UIButton) {
     }
+
+    @IBOutlet weak var clearButtonOutlet: UIButton!
+    
+    //@IBOutlet weak var clearButtonPressed: UIButton!
+    
+    @IBAction func clearButtonPressed(_ sender: UIButton) {
+        if originAirport.textColor != UIColor.black && destinationAirport.textColor != UIColor.black {
+            //ALERT
+        } else if originAirport.textColor == UIColor.black && destinationAirport.textColor == UIColor.black {
+            originAirport.text = originAirportPrompt
+            originAirport.textColor = .lightGray
+            destinationAirport.text = destinationPrompt
+            destinationAirport.textColor = .lightGray
+        } else {
+            if originAirport.text != originAirportPrompt  {
+                originAirport.text = originAirportPrompt
+                originAirport.textColor = .lightGray
+            } else {
+                destinationAirport.text = destinationPrompt
+                destinationAirport.textColor = .lightGray
+            }
+        }
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         originAirport.delegate = self
         destinationAirport.delegate = self
         airportsDisplay.delegate = self
-        
         customizeUI()
         setUpMap()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if originAirport.textColor == UIColor.black && destinationAirport.textColor == UIColor.black {
+            actionButtonOutlet.isHidden = false
+        } else if originAirport.textColor == UIColor.black || destinationAirport.textColor == UIColor.black {
+            clearButtonOutlet.isHidden = false
+        }
     }
     
     // Make the UI look GREAT
@@ -53,6 +84,17 @@ class HomePageController: UIViewController, UITextViewDelegate,  CLLocationManag
         actionButtonOutlet.layer.shadowRadius = 6.0
         actionButtonOutlet.layer.borderColor = themeColor.cgColor
         actionButtonOutlet.layer.borderWidth = 1
+        
+        
+        clearButtonOutlet.isHidden = true
+        clearButtonOutlet.layer.cornerRadius = 10
+        clearButtonOutlet.layer.masksToBounds = true
+        clearButtonOutlet.layer.shadowColor = UIColor.gray.withAlphaComponent(0.5).cgColor
+        clearButtonOutlet.layer.shadowOffset =  CGSize(width: 0, height: -3)
+        clearButtonOutlet.layer.shadowOpacity = 0.5
+        clearButtonOutlet.layer.shadowRadius = 6.0
+        clearButtonOutlet.layer.borderColor = UIColor.white.cgColor
+        clearButtonOutlet.layer.borderWidth = 1
         
         originAirport.layer.cornerRadius = 10
         originAirport.layer.borderColor = themeColor.cgColor
@@ -122,6 +164,11 @@ class HomePageController: UIViewController, UITextViewDelegate,  CLLocationManag
         let nextPage = AirportSearchPage()
         //present(nextPage, animated: true, completion: nil)
         nextPage.homeControllerInstance = self
+        if textView == originAirport {
+           nextPage.isFirstAirport = true
+        } else {
+            nextPage.isFirstAirport = false
+        }
         navigationController?.pushViewController(nextPage, animated: true)
     }
     

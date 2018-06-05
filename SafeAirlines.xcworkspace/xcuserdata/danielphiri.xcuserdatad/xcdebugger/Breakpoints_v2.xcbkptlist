@@ -10,43 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SafeAirlines/Search Pages/AirportSearchPage.swift"
-            timestampString = "549924627.64292"
+            timestampString = "549930245.999922"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "170"
-            endingLineNumber = "170"
-            landmarkName = "reloadList()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SafeAirlines/Search Pages/AirportSearchPage.swift"
-            timestampString = "549924627.643451"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "175"
-            endingLineNumber = "175"
-            landmarkName = "unknown"
-            landmarkType = "0">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SafeAirlines/Search Pages/AirportSearchPage.swift"
-            timestampString = "549924627.644011"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
             landmarkName = "fetchAirportData(withCode:latitude:andLongitude:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -58,12 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SafeAirlines/Search Pages/AirportSearchPage.swift"
-            timestampString = "549924627.644603"
+            timestampString = "549930246.000044"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "168"
-            endingLineNumber = "168"
-            landmarkName = "reloadList()"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
+            landmarkName = "fetchAirportData(withCode:latitude:andLongitude:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -74,12 +42,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SafeAirlines/Search Pages/AirportSearchPage.swift"
-            timestampString = "549924627.644938"
+            timestampString = "549930246.000136"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "188"
-            endingLineNumber = "188"
-            landmarkName = "tableView(_:cellForRowAt:)"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
+            landmarkName = "fetchAirportData(withCode:latitude:andLongitude:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -90,12 +58,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SafeAirlines/Search Pages/AirportSearchPage.swift"
-            timestampString = "549924627.645232"
+            timestampString = "549930246.0002199"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "189"
-            endingLineNumber = "189"
-            landmarkName = "tableView(_:cellForRowAt:)"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
+            landmarkName = "fetchAirportData(withCode:latitude:andLongitude:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -106,12 +74,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SafeAirlines/Search Pages/AirportSearchPage.swift"
-            timestampString = "549924627.645512"
+            timestampString = "549930246.00029"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "190"
-            endingLineNumber = "190"
-            landmarkName = "tableView(_:cellForRowAt:)"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
+            landmarkName = "fetchAirportData(withCode:latitude:andLongitude:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -122,12 +90,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SafeAirlines/Search Pages/AirportSearchPage.swift"
-            timestampString = "549924627.645792"
+            timestampString = "549930246.0003591"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "187"
-            endingLineNumber = "187"
-            landmarkName = "tableView(_:cellForRowAt:)"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
+            landmarkName = "fetchAirportData(withCode:latitude:andLongitude:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -138,12 +106,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SafeAirlines/Search Pages/AirportSearchPage.swift"
-            timestampString = "549924627.6460969"
+            timestampString = "549930246.0004539"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "193"
-            endingLineNumber = "193"
-            landmarkName = "numberOfSections(in:)"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
+            landmarkName = "fetchAirportData(withCode:latitude:andLongitude:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -154,12 +122,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SafeAirlines/Search Pages/AirportSearchPage.swift"
-            timestampString = "549924627.646368"
+            timestampString = "549930246.000563"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "197"
-            endingLineNumber = "197"
-            landmarkName = "tableView(_:heightForRowAt:)"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
+            landmarkName = "fetchAirportData(withCode:latitude:andLongitude:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -170,12 +138,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SafeAirlines/Search Pages/AirportSearchPage.swift"
-            timestampString = "549924627.646633"
+            timestampString = "549930246.000645"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "198"
-            endingLineNumber = "198"
-            landmarkName = "tableView(_:heightForRowAt:)"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
+            landmarkName = "fetchAirportData(withCode:latitude:andLongitude:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -186,12 +154,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SafeAirlines/Search Pages/AirportSearchPage.swift"
-            timestampString = "549924627.6469719"
+            timestampString = "549930246.000713"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "201"
-            endingLineNumber = "201"
-            landmarkName = "collectionSkeletonView(_:cellIdenfierForRowAt:)"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
+            landmarkName = "fetchAirportData(withCode:latitude:andLongitude:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -202,12 +170,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SafeAirlines/Search Pages/AirportSearchPage.swift"
-            timestampString = "549924627.647239"
+            timestampString = "549930246.0007811"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "202"
-            endingLineNumber = "202"
-            landmarkName = "collectionSkeletonView(_:cellIdenfierForRowAt:)"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
+            landmarkName = "fetchAirportData(withCode:latitude:andLongitude:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -218,12 +186,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SafeAirlines/Search Pages/AirportSearchPage.swift"
-            timestampString = "549924627.647498"
+            timestampString = "549930246.000845"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "171"
-            endingLineNumber = "171"
-            landmarkName = "reloadList()"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
+            landmarkName = "fetchAirportData(withCode:latitude:andLongitude:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -234,60 +202,140 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SafeAirlines/Search Pages/AirportSearchPage.swift"
-            timestampString = "549924627.647768"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "169"
-            endingLineNumber = "169"
-            landmarkName = "reloadList()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SafeAirlines/Search Pages/AirportSearchPage.swift"
-            timestampString = "549924627.648042"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "172"
-            endingLineNumber = "172"
-            landmarkName = "reloadList()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SafeAirlines/Search Pages/AirportSearchPage.swift"
-            timestampString = "549924644.007769"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "184"
-            endingLineNumber = "184"
-            landmarkName = "tableView(_:numberOfRowsInSection:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SafeAirlines/Search Pages/AirportSearchPage.swift"
-            timestampString = "549924645.559546"
+            timestampString = "549930246.000912"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "178"
             endingLineNumber = "178"
-            landmarkName = "tableView(_:numberOfRowsInSection:)"
+            landmarkName = "reloadList()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SafeAirlines.AirportSearchPage.reloadList() -&gt; ()"
+                  moduleName = "SafeAirlines"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/danielphiri/Documents/iOS%20Projects/SafeAirlines/SafeAirlines/Search%20Pages/AirportSearchPage.swift"
+                  timestampString = "549930246.145041"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "178"
+                  endingLineNumber = "178"
+                  offsetFromSymbolStart = "14">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in SafeAirlines.AirportSearchPage.reloadList() -&gt; ()"
+                  moduleName = "SafeAirlines"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/danielphiri/Documents/iOS%20Projects/SafeAirlines/SafeAirlines/Search%20Pages/AirportSearchPage.swift"
+                  timestampString = "549930246.148126"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "182"
+                  endingLineNumber = "182"
+                  offsetFromSymbolStart = "14">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SafeAirlines/Search Pages/AirportSearchPage.swift"
+            timestampString = "549930246.000977"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "177"
+            endingLineNumber = "177"
+            landmarkName = "reloadList()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SafeAirlines/Search Pages/AirportSearchPage.swift"
+            timestampString = "549930246.0010411"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "183"
+            endingLineNumber = "183"
+            landmarkName = "reloadList()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SafeAirlines/Search Pages/AirportSearchPage.swift"
+            timestampString = "549930246.00117"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "184"
+            endingLineNumber = "184"
+            landmarkName = "reloadList()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SafeAirlines/Search Pages/AirportSearchPage.swift"
+            timestampString = "549930246.001265"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
+            landmarkName = "fetchAirportData(withCode:latitude:andLongitude:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SafeAirlines/Search Pages/AirportSearchPage.swift"
+            timestampString = "549930246.001333"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
+            landmarkName = "fetchAirportData(withCode:latitude:andLongitude:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SafeAirlines/Search Pages/AirportSearchPage.swift"
+            timestampString = "549930246.0014549"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
+            landmarkName = "fetchAirportData(withCode:latitude:andLongitude:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

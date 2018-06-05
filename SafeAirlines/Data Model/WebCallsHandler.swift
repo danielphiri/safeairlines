@@ -10,8 +10,8 @@ import Alamofire
 import Foundation
 
 func fetchData(fromURL url: String, withCompletionHandler completion: @escaping (Data?) -> Void) {
-    let url = URL(string: url)
-    Alamofire.request(url!, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: ["Authorization": "Bearer 9gkgbxmwazh7qd6u7p8mkuk6", "Accept": "application/json"]).responseData(completionHandler: { response in
+    let link = URL(string: url)
+    Alamofire.request(link!, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: ["Authorization": "Bearer 9gkgbxmwazh7qd6u7p8mkuk6", "Accept": "application/json"]).responseData(completionHandler: { response in
         switch response.result {
         case .success(let value):
             //let json = (value)
