@@ -24,6 +24,7 @@ class AirportSearchPage: UIViewController, UITableViewDataSource, UITableViewDel
     var homeControllerInstance = HomePageController()
     var prototypeCell = "searchResultsCell"
     var cellNibName = "SearchResultsCell"
+    var titleText = ""
     var navigationBarHeight: CGFloat = 87
     // The field where the user types in the search
     lazy var searchField : UITextView = {
@@ -63,10 +64,11 @@ class AirportSearchPage: UIViewController, UITableViewDataSource, UITableViewDel
         super.viewDidLoad()
         navigationBarHeight = UIApplication.shared.statusBarFrame.size.height +
             (self.navigationController?.navigationBar.frame.height ?? 0.0)
-        if locationManager.location != nil {
+        if locationManager.location != nil && allAirports.count == 0 {
             fetchAirportData(withCode: nil, latitude: locationManager.location?.coordinate.latitude.description, andLongitude: locationManager.location?.coordinate.longitude.description)
-        } else {
+        } else if allAirports.count == 0 {
             fetchAirportData(withCode: nil, latitude: nil, andLongitude: nil)
+            titleText = "LOCATION DISABLED. RECOMMENDED AIPORTS:"
         }
         
         setUpViews()
@@ -91,16 +93,16 @@ class AirportSearchPage: UIViewController, UITableViewDataSource, UITableViewDel
         if code == nil && longitude != nil && latitude != nil && allAirports.count == 0 {
             //let url = "https://api-test.lufthansa.com/v1/references/airports/nearest/5.312034213,-0.21341234123"
             let url = "https://VXjkwwSGh4.lufthansa.com/v1/references/airports/nearest/\(latitude!),\(longitude!)/application/json"
-            self.isNearby = true
+            titleText = "LOCATION DISABLED. RECOMMENDED AIPORTS:"
             processRequest(withURL: url)
         } else if (allAirports.count == 0)  {
             if code == nil {
                 let url = firstPartOfApi + lastPartOfApi
-                self.isNearby = false
+                titleText = "AIRPORTS MATCHING YOUR SEARCH:"
                 processRequest(withURL: url)
             } else {
                 let url = firstPartOfApi + code! + lastPartOfApi
-                self.isNearby = false
+                titleText = "AIRPORTS MATCHING YOUR SEARCH:"
                 processRequest(withURL: url)
             }
         }
@@ -239,11 +241,8 @@ extension AirportSearchPage {
         view.backgroundColor = .white
         label.font = UIFont.boldSystemFont(ofSize: 18)
         label.textColor = .gray
-        if isNearby {
-            label.text = "NEARBY AIRPORTS:"
-        } else {
-            label.text = "AIRPORTS MATCHING YOUR SEARCH:"
-        }
+        label.text = titleText
+        label.adjustsFontSizeToFitWidth = true
         view.addSubview(label)
         return view
     }
