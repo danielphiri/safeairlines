@@ -10,6 +10,7 @@ import UIKit
 import MapKit
 import SwiftyJSON
 import SkeletonView
+import MBProgressHUD
 
 class AirportSearchPage: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextViewDelegate, SkeletonTableViewDataSource {
     
@@ -26,9 +27,9 @@ class AirportSearchPage: UIViewController, UITableViewDataSource, UITableViewDel
     var cellNibName = "SearchResultsCell"
     var titleText = ""
     var navigationBarHeight: CGFloat = 87
+    
     // The field where the user types in the search
     lazy var searchField : UITextView = {
-         //87
         let search = UITextView(frame: CGRect.init(x: 0, y: navigationBarHeight, width: view.frame.width, height: 35))
         search.textColor = UIColor.init(red: 92/255, green: 94/255, blue: 102/255, alpha: 1)
         search.layer.cornerRadius = 10
@@ -51,7 +52,7 @@ class AirportSearchPage: UIViewController, UITableViewDataSource, UITableViewDel
     // as user types
     var resultsTableView : UITableView {
        // 125
-       let tableView = UITableView(frame: CGRect(x: 8, y: navigationBarHeight + 36, width: 359, height: 600))
+       let tableView = UITableView(frame: CGRect(x: 8, y: navigationBarHeight + 36, width: view.frame.width - 8, height: 600))
         tableView.delegate = self
         tableView.dataSource = self
         tableView.allowsSelection = true
@@ -68,9 +69,9 @@ class AirportSearchPage: UIViewController, UITableViewDataSource, UITableViewDel
             fetchAirportData(withCode: nil, latitude: locationManager.location?.coordinate.latitude.description, andLongitude: locationManager.location?.coordinate.longitude.description)
         } else if allAirports.count == 0 {
             fetchAirportData(withCode: nil, latitude: nil, andLongitude: nil)
-            titleText = "LOCATION DISABLED. RECOMMENDED AIPORTS:"
+            titleText = "COULD NOT LOAD LOCATION. RECOMMENDED AIPORTS:"
         }
-        
+        showActivity()
         setUpViews()
     }
     
@@ -79,67 +80,97 @@ class AirportSearchPage: UIViewController, UITableViewDataSource, UITableViewDel
         searchField.becomeFirstResponder()
     }
     
+    // Sets up visibe views for class
     func setUpViews() {
         view.backgroundColor = .white
         view.addSubview(searchField)
         view.addSubview(resultsTableView)
         searchField.becomeFirstResponder()
-        if locationManager.location != nil {
-            
-        }
     }
     
+    // Determines what kind of api call to make depending on available data
     func fetchAirportData(withCode code: String?, latitude: String?, andLongitude longitude: String?) {
+        showActivity()
         if code == nil && longitude != nil && latitude != nil && allAirports.count == 0 {
             //let url = "https://api-test.lufthansa.com/v1/references/airports/nearest/5.312034213,-0.21341234123"
-            let url = "https://VXjkwwSGh4.lufthansa.com/v1/references/airports/nearest/\(latitude!),\(longitude!)/application/json"
-            titleText = "LOCATION DISABLED. RECOMMENDED AIPORTS:"
-            processRequest(withURL: url)
+            let url = "https://api.lufthansa.com/v1/references/airports/nearest/\(latitude!),\(longitude!)"
+            titleText = "NEARBY AIPORTS:"
+            processRequest(withURL: url, from: "Nearby")
         } else if (allAirports.count == 0)  {
             if code == nil {
                 let url = firstPartOfApi + lastPartOfApi
-                titleText = "AIRPORTS MATCHING YOUR SEARCH:"
-                processRequest(withURL: url)
+                titleText = "COULD NOT LOAD LOCATION. RECOMMENDED AIPORTS:"
+                processRequest(withURL: url, from: nil)
             } else {
                 let url = firstPartOfApi + code! + lastPartOfApi
-                titleText = "AIRPORTS MATCHING YOUR SEARCH:"
-                processRequest(withURL: url)
+                titleText = "AIPORTS MATCHING YOUR SEARCH:"
+                processRequest(withURL: url, from: "Search")
             }
         }
     }
     
-    func processRequest(withURL url: String) {
+    // Handles all alerts within class
+    func showSystemAlert(title: String, message: String, type: String?) {
+        hideActivity()
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let cancel = UIAlertAction(title: "Okay", style: .default, handler: {(s) -> Void in
+            self.hideActivity()
+        })
+        alert.addAction(cancel)
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    let progress = MBProgressHUD()
+    
+    // Shows an activity indicator when data is loading
+    func showActivity() {
+        
+        MBProgressHUD.showAdded(to: resultsTableView, animated: true)
+        view.addSubview(progress)
+        progress.show(animated: true)
+    }
+    
+    // Hides the activity indicator when data has finished loading
+    func hideActivity() {
+        MBProgressHUD.hide(for: resultsTableView, animated: true)
+        progress.hide(animated: true)
+    }
+    
+    // Makes call to model and handles returned data
+    func processRequest(withURL url: String, from: String?) {
         allAirports.removeAll()
         fetchData(fromURL: url, withCompletionHandler: {(results) -> Void in
-            do {
-                
-                //let json = try JSONSerialization.data(withJSONObject: results!, options: [])//.jsonObject(with: results!, options: [])
-                let json = JSON(results)
-                if json["AirportResource"] != JSON.null {
-                    self.extractAirports(fromJSON: json["AirportResource"] )
-                }
-               
-                //let j = JS
-            } catch {
-                //ERROR
-                //print(error)
+            let json = JSON(results)
+            if json["AirportResource"] != JSON.null {
+                self.extractAirports(fromJSON: json["AirportResource"], from: from)
+            } else if json["NearestAirportResource"] != JSON.null {
+                self.extractAirports(fromJSON: json["NearestAirportResource"], from: from)
+            } else {
+                self.showSystemAlert(title: "Oops, No airport data matching your search was found 😬", message: "Please try your search again. (PRO TIP: Make sure your airport code has only 3 characters!). Thank us later 😉", type: "Alert")
             }
         })
     }
     
+    // Called when user input text changes
     func textViewDidChange(_ textView: UITextView) {
-        if textView.text.count == 3 {
-            textView.isEditable = false
+        if textView.text.last == "\n" {
+            textView.text.removeLast()
+            checkCode(code: textView.text)
+        } else if textView.text.count == 3 {
             textView.resignFirstResponder()
             checkCode(code: textView.text)
+            MBProgressHUD.showAdded(to: resultsTableView, animated: true)
         }
-            //.text = textView.text.capitalized
     }
     
+    // Called when user clicks "Search button"
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if searchField.text.count != 3 {
-            //ERROR
+        if searchField.text.last == "\n" {
+            searchField.text.removeLast()
+        } else if searchField.text.count != 3 {
+            self.showSystemAlert(title: "Ooh, wait ✋🏿", message: "Your code needs to be EXACTLY 3 characters long. Please reset your search and try again.", type: "Error")
         } else {
+            showActivity()
             checkCode(code: searchField.text)
         }
     }
@@ -147,43 +178,43 @@ class AirportSearchPage: UIViewController, UITableViewDataSource, UITableViewDel
     //Checks if code is valid
     func checkCode(code: String) {
         let range = code.rangeOfCharacter(from: letters)
-        // range will be nil if no letters is found
-        if let test = range {
-            //println("letters found")
+        if let _ = range {
             allAirports.removeAll()
-            self.fetchAirportData(withCode: test.description, latitude: nil, andLongitude: nil)
+            self.fetchAirportData(withCode: code, latitude: nil, andLongitude: nil)
         }
-        else {
-            //ERROR
-            //println("letters not found")
-        }
-
     }
     
-    func extractAirports(fromJSON json: JSON) {
-        for data in json["Airports"]["Airport"] {
-            let currData = data.1
-            print(currData)
-            let longitude = currData["Position"]["Coordinate"]["Longitude"].description
-            let latitude = currData["Position"]["Coordinate"]["Latitude"].description
-            let airportCode = currData["AirportCode"].description
-            
+    func extractAirports(fromJSON json: JSON, from: String?) {
+        if from == "Search" {
+            let longitude = json["Airports"]["Airport"]["Position"]["Coordinate"]["Longitude"].description
+            let latitude = json["Airports"]["Airport"]["Position"]["Coordinate"]["Latitude"].description
+            let airportCode = json["Airports"]["Airport"]["AirportCode"].description
             let newAirport = Airport()
             newAirport.setCode(code: airportCode)
             newAirport.setLocation(longitude: longitude, latitude: latitude)
             allAirports.append(newAirport)
+        } else {
+            for data in json["Airports"]["Airport"] {
+                let currData = data.1
+                print(currData)
+                let longitude = currData["Position"]["Coordinate"]["Longitude"].description
+                let latitude = currData["Position"]["Coordinate"]["Latitude"].description
+                let airportCode = currData["AirportCode"].description
+                let newAirport = Airport()
+                newAirport.setCode(code: airportCode)
+                newAirport.setLocation(longitude: longitude, latitude: latitude)
+                allAirports.append(newAirport)
+            }
         }
         self.reloadList()
     }
     
     func reloadList() {
+        showActivity()
         DispatchQueue.main.async {
-//            let path = IndexPath(row: 0, section: 0)
-//            self.resultsTableView.insertRows(at: [path], with: .top)
-            
+            self.hideActivity()
             self.resultsTableView.reloadData()
             self.viewDidLoad()
-            print("kay")
         }
     }
 }
@@ -191,11 +222,6 @@ class AirportSearchPage: UIViewController, UITableViewDataSource, UITableViewDel
 extension AirportSearchPage {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        if allAirports.count == 0 {
-//            //SDStateTableView.setState(.withImage(image: "empty_cart",
-////                                                 title: "Nearest Aiports Loading",
-////                                                 message: "Your nearest airports will finish loading in a few seconds"))
-//        }
         return allAirports.count
     }
     
@@ -226,7 +252,6 @@ extension AirportSearchPage {
             homeControllerInstance.destinationAirport.font = UIFont.boldSystemFont(ofSize: 16)
             navigationController?.popViewController(animated: true)
         }
-        
     }
     
     func collectionSkeletonView(_ skeletonView: UITableView, cellIdenfierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier {
@@ -247,13 +272,6 @@ extension AirportSearchPage {
         return view
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if isNearby {
-            return "Nearby Airports:"
-        } else {
-            return "Matching Airports:"
-        }
-    }
 }
 
 

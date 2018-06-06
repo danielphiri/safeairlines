@@ -7,6 +7,10 @@ target 'SafeAirlines' do
   pod 'Alamofire'
   pod 'SwiftyJSON', '~> 4.0'
   pod "SkeletonView"
+  pod 'GoogleMaps'
+  pod 'GooglePlaces'
+  pod 'SwiftMessages'
+  pod 'MBProgressHUD'
 
   # Pods for SafeAirlines
 

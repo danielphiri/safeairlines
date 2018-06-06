@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="frH-We-Nnz">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tab Bar Controller-->
+        <scene sceneID="qwi-uw-Chk">
+            <objects>
+                <tabBarController id="frH-We-Nnz" sceneMemberID="viewController">
+                    <tabBar key="tabBar" alpha="0.59999999999999998" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="asE-V8-HbH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="0.37647058820000001" green="0.79607843140000001" blue="0.98431372549999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="7Zc-l8-hsZ" kind="relationship" relationship="viewControllers" id="KdE-ab-ycO"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="huF-m5-00w" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1042" y="125"/>
+        </scene>
+        <!--SafeAirlines-->
+        <scene sceneID="tBt-4w-Nl3">
+            <objects>
+                <navigationController id="7Zc-l8-hsZ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="SafeAirlines" image="airline_avatar" id="KTl-4C-6BK">
+                        <color key="badgeColor" red="0.37647058820000001" green="0.79607843140000001" blue="0.98431372549999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kic-Lt-QvR">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="0.37647058820000001" green="0.79607843140000001" blue="0.98431372549999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="LMt-gH-nJq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wPe-2v-SSd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-362" y="125"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="HomePageController" customModule="SafeAirlines" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="y1t-ee-y5V">
+                                <rect key="frame" x="0.0" y="154" width="375" height="464"/>
+                            </mapView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B8A-gB-bej">
+                                <rect key="frame" x="0.0" y="64" width="375" height="90"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Which airport are you going to? 🤔" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Xd5-FI-Y8y">
+                                        <rect key="frame" x="5" y="50" width="365" height="35"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="p0T-lr-RPu"/>
+                                        </constraints>
+                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Which airport are you coming from? 🤔" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="v5a-hl-NAb">
+                                        <rect key="frame" x="5" y="5" width="365" height="35"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="XV8-Ow-RX2"/>
+                                        </constraints>
+                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="v5a-hl-NAb" secondAttribute="trailing" constant="5" id="8aM-yh-U2q"/>
+                                    <constraint firstAttribute="bottom" secondItem="Xd5-FI-Y8y" secondAttribute="bottom" constant="5" id="CZ1-tD-Gza"/>
+                                    <constraint firstItem="Xd5-FI-Y8y" firstAttribute="height" secondItem="v5a-hl-NAb" secondAttribute="height" id="LMQ-Af-KRm"/>
+                                    <constraint firstItem="v5a-hl-NAb" firstAttribute="leading" secondItem="B8A-gB-bej" secondAttribute="leading" constant="5" id="Lbz-8a-u7W"/>
+                                    <constraint firstItem="Xd5-FI-Y8y" firstAttribute="leading" secondItem="B8A-gB-bej" secondAttribute="leading" constant="5" id="MRf-pA-fQR"/>
+                                    <constraint firstItem="Xd5-FI-Y8y" firstAttribute="width" secondItem="v5a-hl-NAb" secondAttribute="width" id="N2g-Sb-EXe"/>
+                                    <constraint firstItem="Xd5-FI-Y8y" firstAttribute="top" secondItem="v5a-hl-NAb" secondAttribute="bottom" constant="10" id="aFP-El-Cdy"/>
+                                    <constraint firstAttribute="height" constant="90" id="fiw-ph-gCq"/>
+                                    <constraint firstItem="v5a-hl-NAb" firstAttribute="top" secondItem="B8A-gB-bej" secondAttribute="top" constant="5" id="vzt-hT-lpx"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2mi-61-tu9">
+                                <rect key="frame" x="291" y="160" width="78" height="33"/>
+                                <color key="backgroundColor" red="0.37647058820000001" green="0.79607843140000001" blue="0.98431372549999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="2cb-2S-o7H"/>
+                                    <constraint firstAttribute="width" constant="78" id="f4a-Gh-F6A"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <state key="normal" title="Clear">
+                                    <color key="titleColor" red="1" green="0.29453803140000001" blue="0.2392998834" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="clearButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Kye-Fk-3F2"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5w0-lF-WYC">
+                                <rect key="frame" x="0.0" y="199" width="375" height="419"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gxU-sa-Qwa">
+                                <rect key="frame" x="205" y="160" width="78" height="33"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <state key="normal" title="GO!">
+                                    <color key="titleColor" red="0.37647058820000001" green="0.79607843140000001" blue="0.98431372549999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="actionButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7Mg-6y-jo5"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="5w0-lF-WYC" firstAttribute="trailing" secondItem="y1t-ee-y5V" secondAttribute="trailing" id="24g-bo-qIP"/>
+                            <constraint firstItem="y1t-ee-y5V" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="3Ft-N4-I0H"/>
+                            <constraint firstItem="2mi-61-tu9" firstAttribute="width" secondItem="gxU-sa-Qwa" secondAttribute="width" id="9Zm-oW-nq8"/>
+                            <constraint firstItem="y1t-ee-y5V" firstAttribute="top" secondItem="B8A-gB-bej" secondAttribute="bottom" id="Haw-Ni-L8K"/>
+                            <constraint firstItem="B8A-gB-bej" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Kjd-Ma-hZT"/>
+                            <constraint firstItem="B8A-gB-bej" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="L14-8L-pZ3"/>
+                            <constraint firstItem="2mi-61-tu9" firstAttribute="leading" secondItem="y1t-ee-y5V" secondAttribute="trailing" constant="-84" id="PpI-t5-pWa"/>
+                            <constraint firstItem="5w0-lF-WYC" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="VI3-Ae-Rbh"/>
+                            <constraint firstItem="gxU-sa-Qwa" firstAttribute="top" secondItem="B8A-gB-bej" secondAttribute="bottom" constant="6" id="WIF-hI-AeH"/>
+                            <constraint firstItem="2mi-61-tu9" firstAttribute="top" secondItem="B8A-gB-bej" secondAttribute="bottom" constant="6" id="WRR-o9-YiW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="y1t-ee-y5V" secondAttribute="bottom" id="a9m-SR-lMS"/>
+                            <constraint firstItem="5w0-lF-WYC" firstAttribute="top" secondItem="gxU-sa-Qwa" secondAttribute="bottom" constant="6" id="cL0-g4-J7U"/>
+                            <constraint firstItem="gxU-sa-Qwa" firstAttribute="height" secondItem="2mi-61-tu9" secondAttribute="height" id="edi-jY-s6d"/>
+                            <constraint firstItem="2mi-61-tu9" firstAttribute="leading" secondItem="gxU-sa-Qwa" secondAttribute="trailing" constant="8" id="eoL-cd-4JT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Xd5-FI-Y8y" secondAttribute="trailing" constant="5" id="jEY-ot-edN"/>
+                            <constraint firstItem="5w0-lF-WYC" firstAttribute="leading" secondItem="y1t-ee-y5V" secondAttribute="leading" id="yCx-Yr-d9A"/>
+                            <constraint firstItem="y1t-ee-y5V" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="zJC-qV-FQb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="SafeAirline" image="airline_avatar" id="T4d-Z6-BPs">
+                        <color key="badgeColor" red="0.37647058820000001" green="0.79607843140000001" blue="0.98431372549999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
+                    <navigationItem key="navigationItem" title="Home" id="mG7-p8-XkE"/>
+                    <connections>
+                        <outlet property="actionButtonOutlet" destination="gxU-sa-Qwa" id="LuT-iM-glt"/>
+                        <outlet property="airportsDisplay" destination="y1t-ee-y5V" id="D7Y-Wa-QbL"/>
+                        <outlet property="backGroundView" destination="B8A-gB-bej" id="mkW-2K-LTY"/>
+                        <outlet property="clearButtonOutlet" destination="2mi-61-tu9" id="IOK-Hl-qoJ"/>
+                        <outlet property="destinationAirport" destination="Xd5-FI-Y8y" id="PST-Fk-kzm"/>
+                        <outlet property="originAirport" destination="v5a-hl-NAb" id="N1d-T8-JnI"/>
+                        <outlet property="schedulesTableView" destination="5w0-lF-WYC" id="TD3-NR-1qz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="364" y="146.17691154422789"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="airline_avatar" width="30" height="30"/>
+    </resources>
+</document>

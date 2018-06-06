@@ -10,6 +10,8 @@
 		1A01058EBD849F97BA51C827 /* Pods_SafeAirlinesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CA163FC306E34358B470C9A /* Pods_SafeAirlinesTests.framework */; };
 		940C193D20C5F80B004BFBD3 /* Airport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940C193C20C5F80B004BFBD3 /* Airport.swift */; };
 		940C193F20C5FB4F004BFBD3 /* Arrays.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940C193E20C5FB4F004BFBD3 /* Arrays.swift */; };
+		940C194120C79BAD004BFBD3 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940C194020C79BAD004BFBD3 /* Schedule.swift */; };
+		940C194420C7D280004BFBD3 /* RoutesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940C194320C7D280004BFBD3 /* RoutesView.swift */; };
 		94ABFEB120C03CEC00B5FB7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94ABFEB020C03CEC00B5FB7B /* AppDelegate.swift */; };
 		94ABFEB620C03CEC00B5FB7B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94ABFEB420C03CEC00B5FB7B /* Main.storyboard */; };
 		94ABFEB820C03CEF00B5FB7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94ABFEB720C03CEF00B5FB7B /* Assets.xcassets */; };
@@ -49,6 +51,8 @@
 		752562DFAB0DBB7AD4636E65 /* Pods_SafeAirlines.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SafeAirlines.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		940C193C20C5F80B004BFBD3 /* Airport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Airport.swift; sourceTree = "<group>"; };
 		940C193E20C5FB4F004BFBD3 /* Arrays.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arrays.swift; sourceTree = "<group>"; };
+		940C194020C79BAD004BFBD3 /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
+		940C194320C7D280004BFBD3 /* RoutesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutesView.swift; sourceTree = "<group>"; };
 		94ABFEAD20C03CEC00B5FB7B /* SafeAirlines.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SafeAirlines.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94ABFEB020C03CEC00B5FB7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		94ABFEB520C03CEC00B5FB7B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -126,6 +130,25 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		940C194220C7D25A004BFBD3 /* Routes */ = {
+			isa = PBXGroup;
+			children = (
+				940C194320C7D280004BFBD3 /* RoutesView.swift */,
+			);
+			path = Routes;
+			sourceTree = "<group>";
+		};
+		940C194520C7F3C5004BFBD3 /* Storyboards && Default Files */ = {
+			isa = PBXGroup;
+			children = (
+				94ABFEB720C03CEF00B5FB7B /* Assets.xcassets */,
+				94ABFEB420C03CEC00B5FB7B /* Main.storyboard */,
+				94ABFEB920C03CEF00B5FB7B /* LaunchScreen.storyboard */,
+				94ABFEBC20C03CEF00B5FB7B /* Info.plist */,
+			);
+			path = "Storyboards && Default Files";
+			sourceTree = "<group>";
+		};
 		94ABFEA420C03CEC00B5FB7B = {
 			isa = PBXGroup;
 			children = (
@@ -151,14 +174,11 @@
 		94ABFEAF20C03CEC00B5FB7B /* SafeAirlines */ = {
 			isa = PBXGroup;
 			children = (
+				940C194520C7F3C5004BFBD3 /* Storyboards && Default Files */,
+				940C194220C7D25A004BFBD3 /* Routes */,
 				94ABFEE620C092E700B5FB7B /* Data Model */,
 				94ABFEE120C090A500B5FB7B /* Search Pages */,
 				94ABFEDE20C08F3E00B5FB7B /* Home Page */,
-				94ABFEB020C03CEC00B5FB7B /* AppDelegate.swift */,
-				94ABFEB420C03CEC00B5FB7B /* Main.storyboard */,
-				94ABFEB720C03CEF00B5FB7B /* Assets.xcassets */,
-				94ABFEB920C03CEF00B5FB7B /* LaunchScreen.storyboard */,
-				94ABFEBC20C03CEF00B5FB7B /* Info.plist */,
 			);
 			path = SafeAirlines;
 			sourceTree = "<group>";
@@ -185,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				94ABFEDF20C08F6700B5FB7B /* HomePageController.swift */,
+				94ABFEB020C03CEC00B5FB7B /* AppDelegate.swift */,
 			);
 			path = "Home Page";
 			sourceTree = "<group>";
@@ -206,6 +227,7 @@
 				94ABFEEE20C1F1EB00B5FB7B /* Constants.swift */,
 				940C193C20C5F80B004BFBD3 /* Airport.swift */,
 				940C193E20C5FB4F004BFBD3 /* Arrays.swift */,
+				940C194020C79BAD004BFBD3 /* Schedule.swift */,
 			);
 			path = "Data Model";
 			sourceTree = "<group>";
@@ -406,13 +428,17 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SafeAirlines/Pods-SafeAirlines-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SkeletonView/SkeletonView.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftMessages/SwiftMessages.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkeletonView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftMessages.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -426,9 +452,14 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SafeAirlines/Pods-SafeAirlines-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -508,8 +539,10 @@
 				94ABFEB120C03CEC00B5FB7B /* AppDelegate.swift in Sources */,
 				940C193F20C5FB4F004BFBD3 /* Arrays.swift in Sources */,
 				94ABFEED20C0B8B900B5FB7B /* SearchResultsCell.swift in Sources */,
+				940C194120C79BAD004BFBD3 /* Schedule.swift in Sources */,
 				94ABFEE520C090FD00B5FB7B /* AirportSearchPage.swift in Sources */,
 				940C193D20C5F80B004BFBD3 /* Airport.swift in Sources */,
+				940C194420C7D280004BFBD3 /* RoutesView.swift in Sources */,
 				94ABFEE020C08F6700B5FB7B /* HomePageController.swift in Sources */,
 				94ABFEE820C0939300B5FB7B /* WebCallsHandler.swift in Sources */,
 				94ABFEEF20C1F1EB00B5FB7B /* Constants.swift in Sources */,
@@ -618,7 +651,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -672,7 +705,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -688,9 +721,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9AMQKU48U7;
-				INFOPLIST_FILE = SafeAirlines/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/SafeAirlines/Storyboards && Default Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.danielphiri.SafeAirlines;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -705,9 +741,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9AMQKU48U7;
-				INFOPLIST_FILE = SafeAirlines/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/SafeAirlines/Storyboards && Default Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.danielphiri.SafeAirlines;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -724,7 +763,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9AMQKU48U7;
 				INFOPLIST_FILE = SafeAirlinesTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.danielphiri.SafeAirlinesTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -742,7 +785,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9AMQKU48U7;
 				INFOPLIST_FILE = SafeAirlinesTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.danielphiri.SafeAirlinesTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -759,7 +806,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9AMQKU48U7;
 				INFOPLIST_FILE = SafeAirlinesUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.danielphiri.SafeAirlinesUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -776,7 +827,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9AMQKU48U7;
 				INFOPLIST_FILE = SafeAirlinesUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.danielphiri.SafeAirlinesUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

@@ -9,9 +9,13 @@ import Alamofire
 
 import Foundation
 
+//Lufthansa's Acess Token. If no data is being returned, get yours
+// at developers.lufthansa.com
+var accessToken = "7cq8squxdq28qewx2xynzuk4"
+
 func fetchData(fromURL url: String, withCompletionHandler completion: @escaping (Data?) -> Void) {
     let link = URL(string: url)
-    Alamofire.request(link!, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: ["Authorization": "Bearer 9gkgbxmwazh7qd6u7p8mkuk6", "Accept": "application/json"]).responseData(completionHandler: { response in
+    Alamofire.request(link!, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: ["Authorization": "Bearer \(accessToken)", "Accept": "application/json"]).responseData(completionHandler: { response in
         switch response.result {
         case .success(let value):
             //let json = (value)
