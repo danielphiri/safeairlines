@@ -23,13 +23,11 @@ class Airport {
         self.code = code
         let url = "https://api.lufthansa.com/v1/references/airports/\(code)?limit=20&offset=0&LHoperated=0"
         fetchData(fromURL: url, withCompletionHandler: {(results) -> Void in
-            //do {
             let json = JSON(results)
             let newJson = json["AirportResource"]
             let longitude = newJson["Airports"]["Airport"]["Position"]["Coordinate"]["Longitude"].description
             let latitude = newJson["Airports"]["Airport"]["Position"]["Coordinate"]["Latitude"].description
             self.setLocation(longitude: longitude, latitude: latitude)
-            //}
         })
         
     }

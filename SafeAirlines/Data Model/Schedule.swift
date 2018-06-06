@@ -10,8 +10,6 @@ import Foundation
 import MapKit
 
 class Schedule {
-//    var departureAirport = ""
-//    var arrivalAirport = ""
     var departureDate = ""
     var originAirport: Airport!
     var destinationAirport: Airport!
@@ -19,15 +17,6 @@ class Schedule {
     init() {
         
     }
-    
-//    func setDepartureAirportName(airport: String) {
-//        self.departureAirport = airport
-//    }
-//    
-//    func setArrivalAirport(airport: String) {
-//        arrivalAirport = airport
-//    }
-    
     func setDepatureDate(date: String) {
         departureDate = date
     }

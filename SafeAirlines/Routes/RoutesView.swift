@@ -11,16 +11,11 @@ import MapKit
 import GoogleMaps
 
 class RoutesView: UIViewController {
-
+    
     var origin = Airport()
     var destination = Airport()
     let locationManager = CLLocationManager()
     var mapView = GMSMapView()
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
 
     override func loadView() {
         let camera = GMSCameraPosition.camera(withLatitude: origin.location.latitude, longitude: origin.location.longitude, zoom: 6.0)
